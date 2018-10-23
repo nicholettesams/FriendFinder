@@ -29,7 +29,7 @@ app.post("/api/friends", function(req, res) {
   for (var f = 0; f < friends.length; f++ ){
       // add scores together of friend (should I store a total??)
       friendTotal = 0
-      for(var i = 0; i < friens[f].scores.length; i++) {
+      for(var i = 0; i < friends[f].scores.length; i++) {
         friendTotal += parseInt(friends[f].scores[i]);
       }
 
