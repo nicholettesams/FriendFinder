@@ -1,11 +1,11 @@
 var friends = require("../data/friends")
 
 
-app.get("/api/friends", function(req, res) {
+module.exports = app.get("/api/friends", function(req, res) {
     res.json(friends)
 });
   
-app.post("/api/friends", function(req, res) {
+module.exports = app.post("/api/friends", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
   var newFriend = req.body;
@@ -43,5 +43,3 @@ app.post("/api/friends", function(req, res) {
 
   res.json(friends[match]);
 });
-
-  // TO DO...how do I export this to be able to import into use in server.js?
