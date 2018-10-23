@@ -17,12 +17,31 @@ app.get("/api/friends", function(req, res) {
     console.log(newFriend);
 
     // add scores together of newFriend
+    newFriendTotal = 0
+    for(var i = 0; i < newFriend.scores.length; i++) {
+      newFriendTotal += parseInt(newFriend.scores[i]);
+    }
 
     var match = 0 // Saves the index of the best match
-    // loop through friends
-    // add scores together of friend (should I store a total??)
-    // save friend as best match if the different between newFriend is lower than the previous friend
+    var matchDifference = 100 //Saves the best matches difference so I can use it to compare to the next friend.  Starting with 100 so I have something to compare first match to.
 
+    // loop through friends
+    for (var f = 0; f < friends.length; f++ ){
+        // add scores together of friend (should I store a total??)
+        friendTotal = 0
+        for(var i = 0; i < friens[f].scores.length; i++) {
+          friendTotal += parseInt(friends[f].scores[i]);
+        }
+
+        currentDifference = newFriendTotal - friendTotal
+
+        // save friend as best match if the different between newFriend is lower than the previous friend
+        if (currentDifference < matchDifference){
+          //better match so save it
+          match = f;
+          currentDifference = matchDifference
+        }
+    }
     
     // after finding match, add the newFriend to the array, do this after so not to compare newFriend to themselves
     freinds.push(newFriend);
