@@ -33,7 +33,7 @@ app.get("/api/friends", function(req, res) {
           friendTotal += parseInt(friends[f].scores[i]);
         }
 
-        currentDifference = newFriendTotal - friendTotal
+        currentDifference = Math.abs(newFriendTotal - friendTotal)
 
         // save friend as best match if the different between newFriend is lower than the previous friend
         if (currentDifference < matchDifference){
