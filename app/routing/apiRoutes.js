@@ -31,7 +31,8 @@ module.exports = app.post("/api/friends", function(req, res) {
       currentDifference = Math.abs(newFriendTotal - friendTotal)
 
       // save friend as best match if the different between newFriend is lower than the previous friend
-      if (currentDifference < matchDifference){
+      // Try to prevent a match to yourself if you try to use this more than once.
+      if (currentDifference < matchDifference && newFriend.name !== friends[f].name){
         //better match so save it
         match = f;
         currentDifference = matchDifference
@@ -39,6 +40,8 @@ module.exports = app.post("/api/friends", function(req, res) {
   }
   
   // after finding match, add the newFriend to the array, do this after so not to compare newFriend to themselves
+
+  // TO DO: check to see if newFriend is already in the array before pushing to the array so as to not add the same person twice.
   friends.push(newFriend);
 
   res.json(friends[match]);
