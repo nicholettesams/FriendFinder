@@ -1,0 +1,24 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "Take a survey and find a friend!",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholettesams/FriendFinder.git"
+  },
+  "author": "Nicholette Sams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicholettesams/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/nicholettesams/FriendFinder#readme"
+}
