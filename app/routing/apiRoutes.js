@@ -2,11 +2,12 @@ var express = require("express");
 var router = express.Router()
 var friends = require("../data/friends")
 
-
+//Display array of objects as JSON
 router.get("/api/friends", function(req, res) {
     res.json(friends)
 });
-  
+
+//Handle post action
 router.post("/api/friends", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
@@ -22,7 +23,7 @@ router.post("/api/friends", function(req, res) {
   var match = 0 // Saves the index of the best match
   var matchDifference = 100 //Saves the best matches difference so I can use it to compare to the next friend.  Starting with 100 so I have something to compare first match to.
 
-  // loop through friends
+  // loop through array of friends objects
   for (var f = 0; f < friends.length; f++ ){
       // add scores together of friend (should I store a total??)
       friendTotal = 0
@@ -42,18 +43,18 @@ router.post("/api/friends", function(req, res) {
   }
   
   // after finding match, add the newFriend to the array, do this after so not to compare newFriend to themselves
-
-  // TO DO: check to see if newFriend is already in the array before pushing to the array so as to not add the same person twice.
+  // check to see if newFriend is already in the array before pushing to the array so as to not add the same person twice.
   if (!containsObject(newFriend, friends)){
     friends.push(newFriend); 
   } else {
     console.log("Duplicate object in the array.")
   }
   
-
+  //return best match to the html to display in a modal form
   res.json(friends[match]);
 });
 
+//Loops through an array of objects and returns true if the object exists in the array and false if it does not.
 var containsObject = function(obj, list) {
   var i;
   for (i = 0; i < list.length; i++) {
