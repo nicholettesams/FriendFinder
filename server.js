@@ -3,14 +3,16 @@ var express = require("express");
 var app = express();
 var path = require("path");
 
-require("./app/routing/apiRoutes.js")(app);
-require("./app/routing/htmlRoutes.js")(app);
+var apiRoutes = require("./app/routing/apiRoutes.js");
+var htmlRoutes = require("./app/routing/htmlRoutes.js");
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 5000;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(apiRoutes)
+app.use(htmlRoutes)
 
 // Starts the server to begin listening
 // =============================================================
