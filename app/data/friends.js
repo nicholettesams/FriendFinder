@@ -1,6 +1,6 @@
 //You should save your application's data inside of `app/data/friends.js` as an array of objects. Each of these objects should roughly follow the format below.
 var friends = [
-{
+    {
     name:"Ahmed",
     photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
     scores:[
@@ -15,7 +15,104 @@ var friends = [
         4,
         1
       ]
+  },
+  {
+    name:"Ross",
+    photo:"https://vignette.wikia.nocookie.net/friends/images/0/0b/RossGeller.jpg/revision/latest?cb=20180424154547",
+    scores:[
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+  },
+  {
+    name:"Joey",
+    photo:"https://vignette.wikia.nocookie.net/friends/images/f/f5/JoeyTribbiani.jpg/revision/latest?cb=20180424154245",
+    scores:[
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+  },
+  {
+    name:"Chandler",
+    photo:"https://vignette.wikia.nocookie.net/friends/images/2/21/2473459498_a3b4e40781.jpg/revision/latest?cb=20100601130820",
+    scores:[
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+  },
+  {
+    name:"Phoebe",
+    photo:"https://vignette.wikia.nocookie.net/friends/images/3/30/PhoebeBuffay.jpg/revision/latest?cb=20180426182547",
+    scores:[
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+  },
+  {
+    name:"Monica",
+    photo:"https://vignette.wikia.nocookie.net/friends/images/2/2f/Monica_Geller-Bing_Season_10.png/revision/latest?cb=20180426182234",
+    scores:[
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+  },
+  {
+    name:"Rachel",
+    photo:"https://vignette.wikia.nocookie.net/friends/images/3/38/RachelGreen.jpg/revision/latest?cb=20180426182043",
+    scores:[
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
   }
+  
 ]
 
 module.exports = friends;
