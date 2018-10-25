@@ -22,16 +22,15 @@ router.post("/api/friends", function(req, res) {
 
   var match = 0 // Saves the index of the best match
   var matchDifference = 100 //Saves the best matches difference so I can use it to compare to the next friend.  Starting with 100 so I have something to compare first match to.
+  var currentDifference = 0
 
   // loop through array of friends objects
   for (var f = 0; f < friends.length; f++ ){
-      // add scores together of friend (should I store a total??)
+      // compare each answer separately to get a different of each question and keep a running total
       friendTotal = 0
       for(var i = 0; i < friends[f].scores.length; i++) {
-        friendTotal += parseInt(friends[f].scores[i]);
+        currentDifference += Math.abs(parseInt(newFriend.scores[i]) - parseInt(friends[f].scores[i]));
       }
-
-      currentDifference = Math.abs(newFriendTotal - friendTotal)
 
       // save friend as best match if the different between newFriend is lower than the previous friend
       // Try to prevent a match to yourself if you try to use this more than once.
