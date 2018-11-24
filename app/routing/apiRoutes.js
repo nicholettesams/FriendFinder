@@ -37,7 +37,7 @@ router.post("/api/friends", function(req, res) {
       if (currentDifference < matchDifference && JSON.stringify(newFriend) !== JSON.stringify(friends[f])){
         //better match so save it
         match = f;
-        currentDifference = matchDifference
+        matchDifference = currentDifference
       }
   }
   
